@@ -7,7 +7,7 @@ const stays = [
 ];
 const events=["Intimate weddings","Performances","Microfestivals","School & charity trips","Retreats","Private gatherings"];
 const extras=[
-  {number:"01",title:"Stay",summary:"Yurt · Willowbrook · bell tents · camping",copy:"Turn the gathering into a whole weekend. Mix the two permanent hideaways with additional canvas accommodation and simple woodland camping for your wider group.",items:["The Yurt and Willowbrook","Bell tents or an event yurt","Camping beneath the trees","Private kitchens and washrooms"]},
+  {number:"01",title:"Stay",summary:"Yurt · Willowbrook · bell tents · camping",copy:"Turn the gathering into a whole weekend. Mix the two permanent hideaways with additional canvas accommodation and simple woodland camping for your wider group.",items:["The Yurt and Willowbrook","Bell tents or an extra yurt","Camping beneath the trees","Private kitchens and washrooms"]},
   {number:"02",title:"Feast",summary:"Catering · bar · firepit · field kitchen · BBQ",copy:"From a long-table supper to food cooked over the fire, we can help shape a relaxed way of eating that suits the setting and the size of your gathering.",items:["Local catering options","Bar setup and service","Field kitchen facilities","Firepit and BBQ cooking"]},
   {number:"03",title:"Stage",summary:"Sound · lighting · marquees · performance space",copy:"Use the Roundhouse as a natural focal point, then build outward with the production and shelter your idea needs—from an intimate acoustic set to a small celebration.",items:["Roundhouse performance space","Sound and lighting options","Marquees and weather cover","Flexible outdoor layouts"]},
 ];
