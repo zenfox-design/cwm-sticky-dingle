@@ -1,8 +1,31 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Guest Guide | Cwm Sticky Dingle",
-  description: "Hand-picked walks, adventures, heritage, food and events around Govilon and Abergavenny.",
+  title: "Things to Do near Abergavenny",
+  description: "A local guide to walks, wild swimming, climbing, canal trips, heritage, food and events around Govilon, Abergavenny and Bannau Brycheiniog.",
+  alternates: { canonical: "/guest-guide" },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Cwm Sticky Dingle",
+    title: "Things to Do near Abergavenny | Cwm Sticky Dingle",
+    description: "Hand-picked walks, adventures, heritage, food and events around Govilon, Abergavenny and Bannau Brycheiniog.",
+    url: "/guest-guide",
+    images: [{
+      url: "/images/woodland-walk-near-abergavenny.webp",
+      width: 867,
+      height: 1800,
+      alt: "A sunlit woodland path near Cwm Sticky Dingle",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Things to Do near Abergavenny | Cwm Sticky Dingle",
+    description: "Hand-picked walks, adventures, heritage, food and events around Govilon, Abergavenny and Bannau Brycheiniog.",
+    images: ["/images/woodland-walk-near-abergavenny.webp"],
+  },
 };
 
 type GuideLink = { title: string; tag: string; note: string; href: string };
@@ -71,13 +94,14 @@ const groups: { id: string; number: string; title: string; intro: string; links:
 export default function GuestGuide() {
   return <main className="guide-page" id="top">
     <header className="guide-header">
-      <a className="wordmark" href="/"><span className="mark">CSD</span><span>Cwm Sticky Dingle</span></a>
-      <nav><a href="#walks">Walk</a><a href="#adventure">Adventure</a><a href="#heritage">History</a><a href="#food">Eat</a></nav>
-      <a className="header-cta" href="/">Return to the Dingle <span>↗</span></a>
+      <Link className="wordmark" href="/"><Image unoptimized className="brand-emblem brand-emblem-header" src="/images/cwm-sticky-dingle-emblem.webp" alt="" width={58} height={58}/><span>Cwm Sticky Dingle</span></Link>
+      <nav className="desktop-nav"><a href="#walks">Walk</a><a href="#adventure">Adventure</a><a href="#heritage">History</a><a href="#food">Eat</a></nav>
+      <Link className="header-cta" href="/">Return to the Dingle <span>↗</span></Link>
+      <details className="mobile-menu"><summary><span>Menu</span><b aria-hidden="true"/></summary><nav><a href="#walks">Walk</a><a href="#adventure">Adventure</a><a href="#heritage">History</a><a href="#food">Eat</a><Link className="mobile-enquire" href="/">Return to the Dingle <span>↗</span></Link></nav></details>
     </header>
 
     <section className="guide-hero">
-      <img src="/images/03-IMG_9305.webp" alt="The green landscape surrounding Cwm Sticky Dingle" />
+      <Image unoptimized src="/images/woodland-walk-near-abergavenny.webp" alt="A sunlit woodland path near Cwm Sticky Dingle" fill priority sizes="100vw" />
       <div className="guide-hero-shade" />
       <div className="guide-hero-copy"><p className="kicker light">The Cwm Sticky Dingle guest guide</p><h1>Go a little<br/><em>further.</em></h1><p>Walks worth waking early for, people to adventure with, old stories in the hills, and good places to eat afterwards.</p></div>
       <a className="guide-scroll" href="#start">Start exploring ↓</a>
@@ -96,6 +120,6 @@ export default function GuestGuide() {
     </section>)}
 
     <section className="guide-safety"><div><p className="kicker light">A note before you go</p><h2>Wild places<br/>change quickly.</h2></div><div><p>Mountain weather, water levels, access and opening times can all change. Check the linked provider on the day, take suitable clothing and equipment, and use qualified instructors for technical activities.</p><p>Our recommendations are a starting point, not a guarantee of access, conditions or availability.</p></div></section>
-    <footer className="guide-footer"><div className="footer-brand"><span className="mark">CSD</span><h2>Come back with stories.</h2><p>Stay wild. Gather differently.</p></div><div><a className="button button-light" href="/">Explore Cwm Sticky Dingle</a></div><div className="footer-bottom"><span>Guest guide · August 2026</span><a href="#top">Back to top ↑</a></div></footer>
+    <footer className="guide-footer"><div className="footer-brand"><Image unoptimized className="brand-emblem brand-emblem-footer" src="/images/cwm-sticky-dingle-emblem.webp" alt="Cwm Sticky Dingle Glamping emblem" width={156} height={156}/><h2>Come back with stories.</h2><p>Stay wild. Gather differently.</p></div><div><Link className="button button-light" href="/">Explore Cwm Sticky Dingle</Link></div><div className="footer-bottom"><span>Guest guide · August 2026</span><a href="#top">Back to top ↑</a></div></footer>
   </main>;
 }
