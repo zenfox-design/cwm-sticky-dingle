@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-08-19");
+  const lastModified = new Date("2026-08-29");
 
   return [
     {
@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://cwmstickydingle.co.uk/guest-guide",
+      url: "https://cwmstickydingle.co.uk/guest-guide/",
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
